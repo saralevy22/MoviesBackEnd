@@ -1,0 +1,20 @@
+﻿[
+    {
+        "UserId": "123456789",
+        "UserName": "user",
+        "password": "user",
+        "FirstName": "אברהם",
+        "LastName": "כהן",
+        "Password": "user",
+        "Role": "User"
+    },
+    {
+        "UserId": "987654321",
+        "UserName": "admin",
+        "password": "admin",
+        "FirstName": "ישראל",
+        "LastName": "ישראלי",
+        "Password": "admin",
+        "Role": "Admin"
+    }
+]

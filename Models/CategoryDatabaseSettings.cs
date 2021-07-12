@@ -11,6 +11,7 @@ namespace Movies.Models
         public string CategoriesCollectionName { get; set; }
         public string ConnectionString { get; set; }
         public string DatabaseName { get; set; }
+        public string CategoriesJson { get; set; }
 
         private IConfiguration _configuration;
         public CategoryDatabaseSettings(IConfiguration configuration)
@@ -19,6 +20,7 @@ namespace Movies.Models
             CategoriesCollectionName = configuration.GetSection("CategoriesDatabaseSettings")?["CategoriesCollectionName"];
             ConnectionString = configuration.GetSection("CategoriesDatabaseSettings")?["ConnectionString"];
             DatabaseName = configuration.GetSection("CategoriesDatabaseSettings")?["DatabaseName"];
+            CategoriesJson = configuration.GetSection("CategoriesDataJson")?["path"];
         }
     }
 }

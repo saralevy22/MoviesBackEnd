@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Caching.Memory;
@@ -44,10 +45,22 @@ namespace Movies.MoviesRepository
 
                 return _Category.Find(category => true).ToList().ToArray();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
+                try
+                {
+                    using (StreamReader r = new StreamReader(_settings.CategoriesJson))
+                    {
+                        _memoryCache.Remove(CategoriesKey);
+                        string json = r.ReadToEnd();
+                        return JsonConvert.DeserializeObject<Models.Category[]>(json).ToArray();
+                    }
+                }
+                catch (Exception ex)
+                {
 
-                throw;
+                    throw;
+                }
             }
         }
 

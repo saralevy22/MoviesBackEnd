@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -48,8 +49,21 @@ namespace Movies.MoviesRepository
             }
             catch (Exception ex)
             {
+                try
+                {
+                    using (StreamReader r = new StreamReader(_settings.UsersJson))
+                    {
+                        _memoryCache.Remove(UsersKey);
+                        string json = r.ReadToEnd();
+                        return JsonConvert.DeserializeObject<Models.User[]>(json).Where(user => user.UserName == username && user.Password == password).FirstOrDefault();
+                    }
+                }
+                catch (Exception)
+                {
 
-                throw;
+                    throw;
+                }
+                
             }
         }
 

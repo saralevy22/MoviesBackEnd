@@ -10,5 +10,6 @@ namespace Movies.Models
         public string MoviesCollectionName { get; set; }
         public string ConnectionString { get; set; }
         public string DatabaseName { get; set; }
+        public string MoviesJson { get; set; }
     }
 }

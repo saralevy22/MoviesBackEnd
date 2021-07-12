@@ -1,0 +1,35 @@
+﻿[
+    {
+        "CategoryId": "0",
+        "CategoryName": "אחר"
+    },
+    {
+        "CategoryId": "1",
+        "CategoryName": "דרמה"
+    },
+    {
+        "CategoryId": "2",
+        "CategoryName": "אקשן"
+    },
+    {
+        "CategoryId": "3",
+        "CategoryName": "ביוגרפיה"
+    },
+    {
+        "CategoryId": "4",
+        "CategoryName": "הסטוריה"
+    },
+    {
+        "CategoryId": "5",
+        "CategoryName": "מוזיקה"
+
+    },
+    {
+        "CategoryId": "6",
+        "CategoryName": "ספורט"
+    },
+    {
+        "CategoryId": "7",
+        "CategoryName": "קומדיה"
+    }
+]
